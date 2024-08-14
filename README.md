@@ -1,6 +1,6 @@
 # **VideoMaker**
 
-Une application pour automatiser la création de vidéos en combinant une image et une piste audio, développée avec React, Next.js avec FFMpeg.
+Une application pour automatiser la création de vidéos en combinant une image et une piste audio, développée avec React, Next.js et FFMpeg.
 
 ## **Table des matières**
 
