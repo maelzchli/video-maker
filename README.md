@@ -11,7 +11,7 @@ Une application pour automatiser la création de vidéos en combinant une image 
 
 ## **Aperçu**
 
-Passionné par la composition musicale, j'ai créé une chaîne YouTube il y a 4 ans pour partager mes productions. La création de mes vidéos impliquait un processus manuel et répétitif avec Da Vinci Resolve, un logiciel de montage vidéo. Le processus consistait à importer une image au format carré et une piste audio, à les placer dans la timeline, à ajuster la durée et la position de l'image, et enfin à exporter la vidéo. Ce processus était non seulement chronophage, mais aussi inutilement complexe puisque aucun montage créatif n'était requis.
+Passionné par la composition musicale, j'ai créé une chaîne YouTube il y a 4 ans pour partager mes productions. La création de mes vidéos impliquait un processus manuel et répétitif avec Da Vinci Resolve. Le processus consistait à importer une image au format carré et une piste audio, à les placer dans la timeline, à ajuster la durée et la position de l'image, et enfin à exporter la vidéo. Ce processus était non seulement chronophage, mais aussi inutilement complexe puisque aucun montage créatif n'était requis.
 
 Pour optimiser ce processus, j'ai développé **VideoMaker**, un outil d'automatisation qui simplifie la création de vidéos en utilisant React, Next.js et la librairie FFMpeg. Désormais, il suffit d'importer une image et une piste audio dans l'application pour générer automatiquement une vidéo au format correct, réduisant ainsi considérablement le temps nécessaire à la production.
 
