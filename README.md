@@ -48,5 +48,5 @@ Ouvrez votre navigateur et accédez à `http://localhost:3000`.
 
 - Importez votre image et votre piste audio dans l'interface utilisateur.
 - Cliquez sur "Créer la vidéo" pour obtenir votre fichier vidéo.
-L'application s'occupera automatiquement du reste : ajustement de la durée de l'image, centrage, mise à l'échelle, et génération de la vidéo au format souhaité.
+L'application s'occupera automatiquement du reste : ajustement de la durée de l'image, centrage, mise à l'échelle, et génération de la vidéo.
 - Vous n'avez plus qu'à la télécharger
