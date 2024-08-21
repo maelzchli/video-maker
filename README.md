@@ -45,6 +45,7 @@ Après avoir installé l'application, voici comment l'utiliser :
 npm run dev
 ```
 Ouvrez votre navigateur et accédez à `http://localhost:3000`.
+Ou bien, accédez directement à l'application en ligne à `https://video-maker-three.vercel.app/`.
 
 - Importez votre image et votre piste audio dans l'interface utilisateur.
 - Cliquez sur "Créer la vidéo" pour obtenir votre fichier vidéo.
