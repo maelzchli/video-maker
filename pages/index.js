@@ -168,7 +168,6 @@ export default function Home() {
     const videoBlob = new Blob([data.buffer], { type: "video/mp4" });
     const videoUrl = URL.createObjectURL(videoBlob);
 
-    // Extract audio file name without extension
     const audioFileName = audioFile.name.split(".").slice(0, -1).join(".");
 
     setVideoUrl(videoUrl);
@@ -184,7 +183,7 @@ export default function Home() {
     <div className="bg-white text-black h-screen text-center">
       <div className="flex justify-center items-end">
         <h1 className="text-5xl p-24 font-sans font-bold">
-          Créons une vidéo avec Zuk
+          Video<strong className="font-bold text-red-600">Maker</strong>
         </h1>
       </div>
       <div className="w-full flex flex-col items-center">
