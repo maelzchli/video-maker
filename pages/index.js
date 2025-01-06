@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { createFFmpeg, fetchFile } from "@ffmpeg/ffmpeg";
 import Image from "next/image";
-import folder1 from "../public/images/folder1.svg";
-import folder2 from "../public/images/folder2.svg";
 
 export default function Home() {
   const [ffmpeg, setFfmpeg] = useState(null);
@@ -180,7 +178,7 @@ export default function Home() {
   };
 
   return (
-    <div className="bg-white text-black h-screen text-center">
+    <div className="bg-white bg-gradient-background text-black h-screen text-center">
       <div className="flex justify-center items-end">
         <h1 className="text-5xl p-24 font-sans font-bold">
           Video<strong className="font-bold text-red-600">Maker</strong>
@@ -189,25 +187,27 @@ export default function Home() {
       <div className="w-full flex flex-col items-center">
         {videoUrl ? (
           <div className=" lg:w-2/4 w-2/3 flex flex-col items-center">
-            <video
-              id="outputVideo"
-              controls
-              src={videoUrl}
-              className="w-full"
-            ></video>
+            <div className="shadow-[10px_10px_20px_#c4c4c4,_-10px_-10px_20px_#ffffff] bg-[#e6e6e6] p-3 rounded-2xl">
+              <video
+                id="outputVideo"
+                controls
+                src={videoUrl}
+                className="w-full rounded-xl"
+              ></video>
+            </div>
             <div className="pt-24 flex justify-center space-x-4">
               <a
                 href={videoUrl}
                 download={videoFileName}
-                className="p-3 bg-red-600 rounded-lg transition duration-200 ease hover:bg-red-700 text-red-50"
+                className="relative button p-3 rounded-2xl z-10 shadow-[5px_5px_10px_#c4c4c4,_-5px_-5px_10px_#ffffff] bg-[#e6e6e6]"
               >
-                Télécharger la vidéo
+                <span className="relative z-20">Télécharger la vidéo</span>
               </a>
               <button
                 onClick={handleRefresh}
-                className="p-3 bg-red-600 rounded-lg transition duration-200 ease hover:bg-red-700 text-red-50"
+                className="relative button p-3 rounded-2xl z-10 shadow-[5px_5px_10px_#c4c4c4,_-5px_-5px_10px_#ffffff] bg-[#e6e6e6]"
               >
-                Créer une nouvelle vidéo
+                <span className="relative z-20">Créer une nouvelle vidéo</span>
               </button>
             </div>
           </div>
@@ -224,7 +224,7 @@ export default function Home() {
                 onClick={handleButtonClick}
                 onMouseEnter={() => setHovered(true)}
                 onMouseLeave={() => setHovered(false)}
-                className="drop-zone h-96 border-2 border-red-100 bg-red-50 rounded-lg flex flex-col items-center justify-center transition duration-200 ease hover:border-red-300"
+                className="drop-zone h-96 rounded-2xl flex flex-col items-center justify-center transition duration-200 ease-in-out cursor-pointer bg-[#e6e6e6] shadow-[inset_10px_10px_20px_#c4c4c4,_inset_-10px_-10px_20px_#ffffff] hover:shadow-[inset_15px_15px_30px_#c4c4c4,_inset_-15px_-15px_30px_#ffffff]"
               >
                 <input
                   type="file"
@@ -236,24 +236,34 @@ export default function Home() {
                 {imageFile && <p>{imageFile.name}</p>}
                 {audioFile && <p>{audioFile.name}</p>}
                 {!imageFile && !audioFile && (
-                  <div className="flex flex-col items-center">
-                    <div className="relative w-16 h-16">
+                  <div
+                    className={`rounded-lg transition duration-200 ease-in-out flex flex-col items-center justify-center ${
+                      hovered ? "scale-95" : "scale-100"
+                    }`}
+                  >
+                    <div className="relative w-16 h-16 p-2">
                       <Image
-                        src={folder1}
+                        src="/images/folder1.svg"
                         alt="Folder"
-                        className={`transition duration-200 ease absolute z-10 ${
+                        width={50}
+                        height={50}
+                        className={`transition duration-200 ease-in-out absolute z-10 ${
                           hovered ? "opacity-0" : "opacity-100"
                         }`}
                       />
                       <Image
-                        src={folder2}
+                        src="/images/folder2.svg"
                         alt="Folder"
-                        className="transition duration-200 ease absolute"
+                        width={50}
+                        height={50}
+                        className="transition duration-200 ease-in-out absolute"
                       />
                     </div>
-                    <p className="pt-3 pl-3 pr-3">
-                      Ajoutez une image et un fichier audio
-                    </p>
+                    <div className="p-4">
+                      <p className={`transition duration-200 ease-in-out`}>
+                        Ajoutez une image et un fichier audio
+                      </p>
+                    </div>
                   </div>
                 )}
               </div>
@@ -261,9 +271,9 @@ export default function Home() {
             {errorMessage && <p className="error">{errorMessage}</p>}
             {isProcessing && (
               <div className="h-96 flex flex-col justify-center items-center">
-                <div className="w-full bg-red-100 rounded-full h-2.5 ">
+                <div className="w-full bg-[#e6e6e6] shadow-[inset_10px_10px_20px_#c4c4c4,_inset_-10px_-10px_20px_#ffffff] rounded-full h-5 ">
                   <div
-                    className="bg-red-600 h-2.5 rounded-lg transition duration-200 ease"
+                    className=" h-5 rounded-lg shadow-[5px_5px_10px_#c4c4c4,_-5px_-5px_10px_#ffffff] bg-gradient-red transition duration-200 ease"
                     style={{ width: `${progress}%` }}
                   ></div>
                 </div>
@@ -274,9 +284,9 @@ export default function Home() {
               {!isProcessing && (
                 <button
                   type="submit"
-                  className="p-3 bg-red-600 text-red-50 rounded-lg transition duration-200 ease hover:bg-red-700"
+                  className="relative button p-3 rounded-2xl z-10 shadow-[5px_5px_10px_#c4c4c4,_-5px_-5px_10px_#ffffff] bg-[#e6e6e6]"
                 >
-                  Créer la vidéo
+                  <span className="relative z-20">Créer la vidéo</span>
                 </button>
               )}
             </div>
